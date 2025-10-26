@@ -5,7 +5,7 @@ import select
 import time
 
 class VoiceServer:
-    def __init__(self, host='localhost', port=12345):
+    def __init__(self, host='0.0.0.0', port=12345):
         self.host = host
         self.port = port
         self.clients = []
@@ -109,10 +109,7 @@ class VoiceServer:
         """Управление сервером"""
         try:
             while self.running:
-                command = input("Введите 'stop' для остановки сервера: ")
-                if command.lower() == 'stop':
-                    self.stop_server()
-                    break
+                time.sleep(1)
         except KeyboardInterrupt:
             self.stop_server()
     

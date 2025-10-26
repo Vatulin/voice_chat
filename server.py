@@ -5,7 +5,7 @@ import select
 import time
 
 class VoiceServer:
-    def __init__(self, host='0.0.0.0', port=12345):
+    def __init__(self, host='localhost', port=12345):
         self.host = host
         self.port = port
         self.clients = []
@@ -13,7 +13,7 @@ class VoiceServer:
 
         self.chunk_size = 1024
         self.audio_format = pyaudio.paInt16
-        self.chanels = 1
+        self.channels = 1
         self.rate = 44100
 
         self.audio = pyaudio.PyAudio()
